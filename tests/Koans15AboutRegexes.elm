@@ -27,23 +27,23 @@ testSuite =
     describe "About Regex"
         [ test "contains tests for a regex match" <|
             \() ->
-                x____replace me____x
+                True
                     |> Expect.equal (Regex.contains (myRegex "[abc]+") "abcdefg")
         , test "Regex.never shall never match anything" <|
             \() ->
-                x____replace me____x
+                False
                     |> Expect.equal (Regex.contains Regex.never "anything")
         , test "you need to escape manually special characters" <|
             \() ->
-                x____replace me____x
+                True
                     |> Expect.equal (Regex.contains (myRegex "\\[abc\\]\\+") "hello[abc]+elm")
         , test "it's easy to make your regex case insensitive" <|
             \() ->
-                x____replace me____x
+                True
                     |> Expect.equal (Regex.contains (myRegexWith { caseInsensitive = True, multiline = False } "[abc]+") "ABC")
         , test "find returns a list of all matches" <|
             \() ->
-                x____replace me____x
+                []
                     |> Expect.equal (Regex.find (myRegex "abc") "abcabcabc" |> List.length)
         , test "matches contain the match" <|
             \() ->
