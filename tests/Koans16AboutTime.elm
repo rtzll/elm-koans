@@ -18,38 +18,38 @@ testSuite =
     describe "About Time"
         [ test "you can get millis for a posix time" <|
             \() ->
-                x____replace me____x
+                0
                     |> Expect.equal (Time.posixToMillis epoch)
         , test "the year of a posix is human parsable" <|
             \() ->
-                x____replace me____x
+                1970
                     |> Expect.equal (Time.toYear Time.utc epoch)
         , test "the month of a posix is human parsable" <|
             \() ->
-                x____replace me____x
+                Time.Jan
                     |> Expect.equal (Time.toMonth Time.utc epoch)
         , test "the day of a posix is human parsable" <|
             \() ->
-                x____replace me____x
+                1
                     |> Expect.equal (Time.toDay Time.utc epoch)
         , test "the weekday of a posix is human parsable" <|
             \() ->
-                x____replace me____x
+                Time.Thu
                     |> Expect.equal (Time.toWeekday Time.utc epoch)
         , test "the hour of a posix is human parsable" <|
             \() ->
-                x____replace me____x
+                0
                     |> Expect.equal (Time.toHour Time.utc epoch)
         , test "the minute of a posix is human parsable" <|
             \() ->
-                x____replace me____x
+                0
                     |> Expect.equal (Time.toMinute Time.utc epoch)
         , test "the second of a posix is human parsable" <|
             \() ->
-                x____replace me____x
+                0
                     |> Expect.equal (Time.toSecond Time.utc epoch)
         , test "the millis of a posix is human parsable" <|
             \() ->
-                x____replace me____x
+                0
                     |> Expect.equal (Time.toMillis Time.utc epoch)
         ]

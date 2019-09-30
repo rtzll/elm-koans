@@ -62,29 +62,29 @@ testSuite =
     describe "About TypeVariables"
         [ test "Functions can have type variables (full words starting with lower case letters)" <|
             \() ->
-                x____replace me____x
+                ( [ 1 ], [ 2, 3 ] )
                     |> Expect.equal (splitList [ 1, 2, 3 ])
         , test "and then those functions can be applied to other types as well" <|
             \() ->
-                x____replace me____x
+                ( [ "a" ], [ "b", "c" ] )
                     |> Expect.equal (splitList [ "a", "b", "c" ])
         , test "constrained type variable 'number' is for functions using math operators" <|
             \() ->
-                x____replace me____x
+                ( 4, 4.0 )
                     |> Expect.equal
                         ( squareNumber 2
                         , squareNumber 2.0
                         )
         , test "constrained type variable 'appendable' is for functions using the append operator" <|
             \() ->
-                x____replace me____x
+                ( [ 1, 2, 1, 2 ], "abcabc" )
                     |> Expect.equal
                         ( doubleIt [ 1, 2 ]
                         , doubleIt "abc"
                         )
         , test "constrained type variable 'comparable' is for functions using comparision operators" <|
             \() ->
-                x____replace me____x
+                ( False, True, True )
                     |> Expect.equal
                         ( lessThan 'b' 'a'
                         , lessThan [ "hello", "w0rld" ] [ "hello", "world" ]
@@ -92,7 +92,7 @@ testSuite =
                         )
         , test "constained type variable 'compappend' is for functions taking args that are both comparable and appendable" <|
             \() ->
-                x____replace me____x
+                ( "w0rldw0rld", [ 1, 2 ] )
                     |> Expect.equal
                         ( doubleTheFirstIfLess "w0rld" "world"
                         , doubleTheFirstIfLess [ 1, 2 ] [ 0, 1 ]

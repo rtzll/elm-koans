@@ -37,7 +37,7 @@ testSuite =
                     realAnswerTo _ =
                         42
                 in
-                x____replace me____x
+                42
                     |> Expect.equal (realAnswerTo [ "life", "universe", "everything" ])
         , test "integers can be matched (floats are not recommended)" <|
             \() ->
@@ -51,7 +51,7 @@ testSuite =
                             _ ->
                                 False
                 in
-                x____replace me____x
+                False
                     |> Expect.equal (isZero -1)
         , test "strings can be matched" <|
             \() ->
@@ -65,7 +65,7 @@ testSuite =
                             _ ->
                                 False
                 in
-                x____replace me____x
+                True
                     |> Expect.equal (isCool "cool")
         , test
             "list head can be matched separately from the rest"
@@ -81,7 +81,7 @@ testSuite =
                             [] ->
                                 0
                 in
-                x____replace me____x
+                2
                     |> Expect.equal (sizeOfList [ 1, 2 ])
         , test "Union types can be pattern matched" <|
             \() ->
@@ -98,7 +98,7 @@ testSuite =
                             Bycicle ->
                                 Nothing
                 in
-                x____replace me____x
+                Just "MZ/X"
                     |> Expect.equal (licensePlate (Motorbike "MZ/X"))
         , test "Records can be pattern matched" <|
             \() ->
@@ -107,7 +107,7 @@ testSuite =
                     directoryName { firstname, surname } =
                         surname ++ ", " ++ firstname
                 in
-                x____replace me____x
+                "Olla, Anna"
                     |> Expect.equal (directoryName { firstname = "Anna", surname = "Olla" })
         , test "more complex structures can also be matched" <|
             \() ->
@@ -121,6 +121,6 @@ testSuite =
                             _ ->
                                 "do not care"
                 in
-                x____replace me____x
+                "Car: ABC-123 to Doe, John"
                     |> Expect.equal (salesRecordPrintout <| SoldToPerson (Car "ABC-123") { firstname = "John", surname = "Doe" })
         ]
